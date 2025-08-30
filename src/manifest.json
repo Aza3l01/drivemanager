@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "DriveManager",
+  "version": "1.0",
+  "description": "Upload and manage files on Google Drive with pause/resume capability",
+  
+  "permissions": [
+    "storage",
+    "identity"
+  ],
+  
+  "host_permissions": [
+    "https://www.googleapis.com/*",
+    "https://www.googleapis.com/upload/drive/v3/*",
+    "https://www.googleapis.com/drive/v3/*"
+  ],
+  
+  "oauth2": {
+    "client_id": "143783789591-l8l2e80srfrc65r4kffj77mft4qdb56b.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/drive.file"
+    ]
+  },
+  
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "DriveManager"
+  },
+  
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  
+  "icons": {
+    "16": "icons/icon16.png",
+    "64": "icons/icon64.png",
+    "128": "icons/icon128.png"
+  },
+  
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

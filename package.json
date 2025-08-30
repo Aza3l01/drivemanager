@@ -1,0 +1,18 @@
+{
+  "name": "drivemanager",
+  "version": "1.0.0",
+  "description": "A browser extension for managing uploads to Google Drive",
+  "scripts": {
+    "build": "node scripts/build.js all",
+    "build:chrome": "node scripts/build.js chrome",
+    "build:firefox": "node scripts/build.js firefox",
+    "clean": "rm -rf dist/",
+    "dev:chrome": "npm run build:chrome && cd dist/chrome && npx web-ext run --target=chrome",
+    "dev:firefox": "npm run build:firefox && cd dist/firefox && npx web-ext run --target=firefox",
+    "test": "npm run build && echo 'Build completed successfully'"
+  },
+  "devDependencies": {
+    "webextension-polyfill": "^0.12.0",
+    "fs-extra": "^11.0.0"
+  }
+}

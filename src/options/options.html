@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>DriveManager Options</h1>
+    </header>
+    
+    <div class="section">
+      <h2>Google Drive Settings</h2>
+      <div class="form-group">
+        <label for="default-folder">Default Folder ID (optional):</label>
+        <input type="text" id="default-folder" placeholder="Leave empty for root folder">
+        <p class="help-text">Enter the ID of the Google Drive folder where files should be uploaded</p>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>Upload Settings</h2>
+      <div class="form-group">
+        <label for="chunk-size">Chunk Size:</label>
+        <select id="chunk-size">
+          <option value="1048576">1 MB</option>
+          <option value="5242880" selected>5 MB</option>
+          <option value="10485760">10 MB</option>
+          <option value="20971520">20 MB</option>
+        </select>
+        <p class="help-text">Larger chunks upload faster but may fail more easily on poor connections</p>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>Advanced</h2>
+      <div class="form-group">
+        <button id="clear-data" class="danger-button">Clear All Upload Data</button>
+        <p class="help-text">This will remove all upload history and cannot be undone</p>
+      </div>
+    </div>
+    
+    <div class="actions">
+      <button id="save-button">Save Settings</button>
+      <button id="cancel-button">Cancel</button>
+    </div>
+  </div>
+  
+  <script src="options.js"></script>
+</body>
+</html>
